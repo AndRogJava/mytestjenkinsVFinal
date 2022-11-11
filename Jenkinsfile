@@ -24,7 +24,7 @@ pipeline {
                 allowMissing: false,
                 alwaysLinkToLastBuild: false,
                 keepAll: true,
-                reportDir: '',
+                reportDir: '/var/jenkins_home/jobs/pipeline_github1/builds',
                 reportFiles: 'index.html',
                 reportName: 'RCov Report'
                 ]
