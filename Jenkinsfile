@@ -16,15 +16,21 @@ pipeline {
             steps {
                 withMaven(maven : 'maven_3_5_0') {
                     sh 'mvn test'
+                    
+                 archive includes: 'pkg/*.gem'
+
+        // publish html
+                publishHTML target: [
+                allowMissing: false,
+                alwaysLinkToLastBuild: false,
+                keepAll: true,
+                reportDir: '',
+                reportFiles: 'index.html',
+                reportName: 'RCov Report'
+                ]
                 }
             }
         }
     }
- publishHTML (target : [allowMissing: false,
- alwaysLinkToLastBuild: true,
- keepAll: true,
- reportDir: 'reports',
- reportFiles: 'myreport.html',
- reportName: 'My Reports',
- reportTitles: 'The Report'])
+ 
 }
