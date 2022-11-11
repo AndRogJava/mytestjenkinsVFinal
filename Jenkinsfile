@@ -20,4 +20,17 @@ pipeline {
             }
         }
     }
+    post {
+        always {  
+            publishHTML target: [
+                reportName: 'Test',
+                reportDir: 'reports/site/serenity',
+                reportFiles: 'index.html', 
+                reportTitles: 'Exec-1', 
+                keepAll: true,
+                alwaysLinkToLastBuild: true,
+                allowMissing: false
+            ]  
+        }
+    }
 }
