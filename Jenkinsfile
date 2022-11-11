@@ -24,7 +24,7 @@ pipeline {
         always {  
             publishHTML target: [
                 reportName: 'Test',
-                reportDir: 'reports',
+                reportDir: '',
                 reportFiles: 'index.html', 
                 reportTitles: 'Exec-1', 
                 keepAll: true,
